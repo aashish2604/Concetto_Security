@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:concetto_security/scan.dart';
 import 'package:concetto_security/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 
@@ -102,10 +103,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(
+              'Concetto Security',
+              style: GoogleFonts.orbitron(
+                  fontSize: 26.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.2,
+            ),
+            Container(
+              height: 300,
+              width: 300,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/qr_icon.png'),
+                      fit: BoxFit.fill)),
+            ),
+            const SizedBox(
+              height: 20.0,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: TextButton(
